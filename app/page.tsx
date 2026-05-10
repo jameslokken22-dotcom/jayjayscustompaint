@@ -1,65 +1,232 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="min-h-screen bg-black text-white">
+
+      {/* NAV */}
+      <nav style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "0.75rem 2rem",
+        borderBottom: "2px solid #84cc16",
+        background: "rgba(0,0,0,0.95)",
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+      }}>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/logo.png"
+          alt="JayJays Custom Paint"
+          width={200}
+          height={100}
+          style={{ objectFit: "contain" }}
+        />
+        <div style={{ display: "flex", gap: "2rem" }}>
+          {["Projects", "Merch", "Contact"].map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              style={{
+                color: "#84cc16",
+                textDecoration: "none",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+              }}
+            >
+              {item}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* HERO BANNER */}
+      <section style={{ position: "relative", width: "100%", height: "1300px" }}>
+        <Image
+          src="/images/hero.jpg"
+          alt="JayJays Custom Paint"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        {/* Dark overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%)",
+        }} />
+        {/* Hero text on top of banner */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          paddingBottom: "3rem",
+          textAlign: "center",
+        }}>
+          <h1 style={{
+            fontSize: "clamp(2rem, 5vw, 3.5rem)",
+            fontWeight: 900,
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            marginBottom: "1rem",
+            textShadow: "0 0 30px rgba(132,204,22,0.8)",
+          }}>
+            <span style={{ color: "#84cc16" }}>Think It.</span>{" "}
+            <span style={{ color: "#a855f7" }}>Paint It.</span>{" "}
+            <span style={{ color: "white" }}>Ride It.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
+            <Link href="/contact" style={{
+              background: "#84cc16",
+              color: "black",
+              padding: "0.9rem 2rem",
+              borderRadius: "0.5rem",
+              fontWeight: 800,
+              textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              boxShadow: "0 0 20px rgba(132,204,22,0.6)",
+            }}>
+              Get a Quote
+            </Link>
+            <Link href="/projects" style={{
+              border: "2px solid #84cc16",
+              color: "#84cc16",
+              padding: "0.9rem 2rem",
+              borderRadius: "0.5rem",
+              fontWeight: 800,
+              textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+            }}>
+              See My Work
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* SERVICES */}
+      <section style={{
+        padding: "5rem 2rem",
+        background: "#0a0a0a",
+      }}>
+        <h2 style={{
+          textAlign: "center",
+          fontSize: "2.5rem",
+          fontWeight: 900,
+          color: "#84cc16",
+          textTransform: "uppercase",
+          marginBottom: "3rem",
+          letterSpacing: "0.1em",
+        }}>
+          What I Do
+        </h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "1rem",
+          maxWidth: "1000px",
+          margin: "2rem auto",
+        }}>
+         {[
+  { img: "/images/moto.jpg", title: "Motorcycles", desc: "Full custom paint jobs, flames, murals, and more" },
+  { img: "/images/car.jpg", title: "Cars & Trim", desc: "Car trim, accents, and working toward full resprays" },
+  { img: "/images/wood.jpg", title: "Wood & Furniture", desc: "Dressers, signs, and anything wood you can think of" },
+  { img: "/images/custom.jpg", title: "Anything Custom", desc: "If you can dream it, JayJay can paint it" },
+].map((service) => (
+  <div key={service.title} style={{
+    background: "#111",
+    border: "1px solid #84cc16",
+    borderRadius: "1rem",
+    overflow: "hidden",
+    boxShadow: "0 0 15px rgba(132,204,22,0.2)",
+  }}>
+    <div style={{ position: "relative", width: "100%", height: "200px" }}>
+      <Image
+        src={service.img}
+        alt={service.title}
+        fill
+        style={{ objectFit: "cover" }}
+      />
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%)",
+      }} />
     </div>
+    <div style={{ padding: "1.5rem", textAlign: "center" }}>
+      <h3 style={{ color: "#84cc16", fontWeight: 800, marginBottom: "0.5rem", fontSize: "1.2rem" }}>
+        {service.title}
+      </h3>
+      <p style={{ color: "#9ca3af", lineHeight: 1.6 }}>{service.desc}</p>
+    </div>
+  </div>
+))}
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section style={{
+        padding: "5rem 2rem",
+        background: "linear-gradient(135deg, #0d1f00 0%, #000 50%, #1a0a2e 100%)",
+        textAlign: "center",
+      }}>
+        <h2 style={{
+          fontSize: "2.5rem",
+          fontWeight: 900,
+          color: "#84cc16",
+          textTransform: "uppercase",
+          marginBottom: "1.5rem",
+          letterSpacing: "0.1em",
+        }}>
+          About JayJay
+        </h2>
+        <p style={{
+          fontSize: "1.1rem",
+          color: "#d1d5db",
+          maxWidth: "700px",
+          margin: "0 auto 2rem",
+          lineHeight: 1.8,
+        }}>
+          I work independently — no excuses, no passing blame. Just passion, precision, and paint.
+          Every project gets my full attention and I won&apos;t stop until you love it.
+          Bringing your ideas to life is what drives me every single day.
+        </p>
+        <Link href="/contact" style={{
+          border: "2px solid #a855f7",
+          color: "#a855f7",
+          padding: "1rem 2rem",
+          borderRadius: "0.5rem",
+          fontWeight: 800,
+          textDecoration: "none",
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+        }}>
+          Let&apos;s Work Together
+        </Link>
+      </section>
+
+      {/* FOOTER */}
+      <footer style={{
+        background: "#000",
+        borderTop: "2px solid #84cc16",
+        padding: "2rem",
+        textAlign: "center",
+        color: "#6b7280",
+      }}>
+        <p style={{ color: "#84cc16", fontWeight: 700, marginBottom: "0.5rem" }}>
+          JayJay&apos;s Custom Paint
+        </p>
+        <p>Dream It. Paint It. Ride It. Live It.</p>
+      </footer>
+
+    </main>
   );
 }
