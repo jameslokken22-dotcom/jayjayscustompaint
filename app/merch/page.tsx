@@ -38,6 +38,9 @@ export default function Merch() {
         <div className="mt-8 border border-white/20 rounded-xl p-6">
           <div className="text-xl font-semibold">Logo Tee</div>
           <div className="text-white/70">$30.00</div>
+              <div className="my-4">
+                <img src="/images/tee.jpg" alt="Logo Tee" width={400} height={400} className="rounded" />
+              </div>
 
           <div className="mt-4">
             <label>Color</label>
