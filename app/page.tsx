@@ -45,12 +45,12 @@ export default function Home() {
       </nav>
 
       {/* HERO BANNER */}
-      <section style={{ position: "relative", width: "100%", height: "1300px" }}>
+      <section style={{ position: "relative", width: "100%", aspectRatio: "1983/793" }}>
         <Image
           src="/images/hero.jpg"
           alt="JayJays Custom Paint"
           fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          style={{ objectFit: "contain", objectPosition: "relative" }}
           priority
         />
         {/* Dark overlay */}
