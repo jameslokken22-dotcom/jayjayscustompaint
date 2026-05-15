@@ -1,20 +1,112 @@
 "use client";
-  
-<Projects/>                
+
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-black text-white p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Projects</h1> 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="border border-white/20 rounded-xl p-4">
- 
-            <h2 className="text-xl font-semibold mt-4">Custom Helmet</h2>
-            <p className="text-white/70 mt-2">A custom motorcycle helmet featuring a bold airbrushed design with vibrant colors and intricate patterns, providing both style and protection.</p>
+    <main style={{ minHeight: "100vh", background: "#000", color: "white" }}>
+
+      {/* NAV */}
+      <nav style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "0.75rem 2rem",
+        borderBottom: "2px solid #84cc16",
+        background: "rgba(0,0,0,0.95)",
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+      }}>
+        <Link href="/">
+          <Image
+            src="/images/logo.jpg"
+            alt="JayJays"
+            width={60}
+            height={60}
+            style={{ objectFit: "contain" }}
+          />
+        </Link>
+        <div style={{ display: "flex", gap: "2rem" }}>
+          {["Projects", "Merch", "Contact"].map((item) => (
+            <Link key={item} href={`/${item.toLowerCase()}`} style={{
+              color: "#84cc16",
+              textDecoration: "none",
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              fontSize: "1rem",
+            }}>
+              {item}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* CONTENT */}
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+        <h1 style={{
+          fontSize: "2.5rem",
+          fontWeight: 900,
+          color: "#84cc16",
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          marginBottom: "2rem",
+          textAlign: "center",
+        }}>
+          Projects
+        </h1>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "1.5rem",
+        }}>
+          {/* Project cards - add more as needed */}
+          <div style={{
+            background: "#111",
+            border: "1px solid #84cc16",
+            borderRadius: "1rem",
+            overflow: "hidden",
+            boxShadow: "0 0 15px rgba(132,204,22,0.1)",
+          }}>
+            <div style={{ position: "relative", width: "100%", height: "250px" }}>
+              <Image
+                src="/images/moto.jpg"
+                alt="Custom Helmet"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div style={{ padding: "1.5rem" }}>
+              <h2 style={{ color: "#84cc16", fontWeight: 800, fontSize: "1.2rem", marginBottom: "0.5rem" }}>
+                Custom Helmet
+              </h2>
+              <p style={{ color: "#9ca3af", lineHeight: 1.6 }}>
+                A custom motorcycle helmet featuring bold airbrushed design with vibrant colors and intricate patterns.
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
+
+      {/* FOOTER */}
+      <footer style={{
+        background: "#000",
+        borderTop: "2px solid #84cc16",
+        padding: "2rem",
+        textAlign: "center",
+        color: "#6b7280",
+        marginTop: "4rem",
+      }}>
+        <p style={{ color: "#84cc16", fontWeight: 700, marginBottom: "0.5rem" }}>
+          JayJay&apos;s Custom Paint
+        </p>
+        <p>Dream It. Paint It. Ride It. Live It.</p>
+      </footer>
+
     </main>
   );
 }
-

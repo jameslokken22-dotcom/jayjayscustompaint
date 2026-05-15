@@ -50,7 +50,7 @@ export default function Home() {
           src="/images/hero.jpg"
           alt="JayJays Custom Paint"
           fill
-          style={{ objectFit: "contain", objectPosition: "relative" }}
+          style={{objectFit: "cover", objectPosition: "relative" }}
           priority
         />
         {/* Dark overlay */}
@@ -115,25 +115,25 @@ export default function Home() {
       {/* SERVICES */}
       <section style={{
         padding: "5rem 2rem",
-        background: "#0a0a0a",
+        background: "#000000",
       }}>
         <h2 style={{
           textAlign: "center",
-          fontSize: "2.5rem",
-          fontWeight: 900,
+          fontSize: "5rem",
+          fontWeight: 450,
           color: "#84cc16",
           textTransform: "uppercase",
-          marginBottom: "3rem",
-          letterSpacing: "0.1em",
+          marginBottom: "5rem",
+          letterSpacing: "0.01rem",
         }}>
           What I Do
         </h2>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "1rem",
-          maxWidth: "1000px",
-          margin: "2rem auto",
+          gridTemplateColumns: "repeat(auto-fit, minmax(750px, 2fr))",
+          gap: "4.2rem",
+          maxWidth: "2200px",
+          margin: "3rem auto",
         }}>
          {[
   { img: "/images/moto.jpg", title: "Motorcycles", desc: "Full custom paint jobs, flames, murals, and more" },
@@ -143,12 +143,12 @@ export default function Home() {
 ].map((service) => (
   <div key={service.title} style={{
     background: "#111",
-    border: "1px solid #84cc16",
-    borderRadius: "1rem",
+    border: "5px solid #96ec16",
+    borderRadius: "1.5rem",
     overflow: "hidden",
-    boxShadow: "0 0 15px rgba(132,204,22,0.2)",
+    boxShadow: "0 0 45px rgb(106, 0, 228)",
   }}>
-    <div style={{ position: "relative", width: "100%", height: "200px" }}>
+    <div style={{ position: "relative", width: "100%", height: "1000px" }}>
       <Image
         src={service.img}
         alt={service.title}
@@ -158,14 +158,14 @@ export default function Home() {
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.8) 100%)",
+        background: "linear-gradient(to bottom, transparent 80%, rgba(146, 255, 21, 0.8) 100%)",
       }} />
     </div>
-    <div style={{ padding: "1.5rem", textAlign: "center" }}>
-      <h3 style={{ color: "#84cc16", fontWeight: 800, marginBottom: "0.5rem", fontSize: "1.2rem" }}>
+    <div style={{ padding: "1.8rem", textAlign: "center" }}>
+      <h3 style={{ color: "#8bff2d", fontWeight: 800, marginBottom: "0.05rem", fontSize: "2rem" }}>
         {service.title}
       </h3>
-      <p style={{ color: "#9ca3af", lineHeight: 1.6 }}>{service.desc}</p>
+      <p style={{ color: "#c3fa95", lineHeight: 1.6 }}>{service.desc}</p>
     </div>
   </div>
 ))}
@@ -179,25 +179,26 @@ export default function Home() {
         textAlign: "center",
       }}>
         <h2 style={{
-          fontSize: "2.5rem",
-          fontWeight: 900,
-          color: "#84cc16",
+          fontSize: "6.5rem",
+          fontWeight: 1300,
+          color: "#00f7ff",
           textTransform: "uppercase",
-          marginBottom: "1.5rem",
-          letterSpacing: "0.1em",
+          marginBottom: "2rem",
+          letterSpacing: "0.001em",
         }}>
-          About JayJay
+          More About Me
         </h2>
         <p style={{
-          fontSize: "1.1rem",
+          fontSize: "1.5rem",
           color: "#d1d5db",
-          maxWidth: "700px",
+          maxWidth: "3000px",
           margin: "0 auto 2rem",
           lineHeight: 1.8,
         }}>
-          I work independently — no excuses, no passing blame. Just passion, precision, and paint.
-          Every project gets my full attention and I won&apos;t stop until you love it.
-          Bringing your ideas to life is what drives me every single day.
+          I was told finding a job that worked around my child’s schedule was “just how it is.” I didn’t accept that. One night, trying to shut my brain off, I picked up a paintbrush—and decided to build something on my own terms.
+With a push from the people who believed in me, I took the leap and started my business. Not to play it safe— but to take control of my time, my craft, and my life. Now it’s just me and my paint booth. No crew to hide behind. No excuses to lean on. No shortcuts. Just passion, precision, and paint.
+Every project has my name on it, and I treat it that way. I don’t rush work, I don’t cut corners, and I don’t walk away until it’s right. Your excitement isn’t optional—it’s the standard. If it doesn’t meet my expectations, it doesn’t leave the booth.
+This isn’t a side hustle. It isn’t a fallback. It’s a skill sharpened by purpose and fueled by determination. Bringing your ideas to life isn’t just what I do—it’s how I prove that betting on yourself is worth it, every single day.
         </p>
         <Link href="/contact" style={{
           border: "2px solid #a855f7",
