@@ -20,4 +20,4 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.v
+    <html lang="en" className={`${geistSans.v}
