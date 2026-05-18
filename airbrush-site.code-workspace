@@ -1,15 +1,9 @@
 {
 	"folders": [
 		{
+			"name": "airbrush-site",
 			"path": "."
-		},
-		{
-			"path": "app/cart"
-		},
-		{
-			"path": "app/merch"
 		}
 	],
-	"settings": {
-	}
+	"settings": {}
 }

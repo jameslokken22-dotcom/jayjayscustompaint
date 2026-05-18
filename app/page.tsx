@@ -67,7 +67,7 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-end",
-          paddingBottom: "3rem",
+          paddingBottom: "*20rem",
           textAlign: "center",
         }}>
           <h1 style={{
