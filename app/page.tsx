@@ -18,7 +18,7 @@ export default function Home() {
         zIndex: 100,
       }}>
         <Image
-          src="/images/logo.png"
+          src="/images/logo.PNG"
           alt="JayJays Custom Paint"
           width={200}
           height={100}
@@ -119,21 +119,21 @@ export default function Home() {
       }}>
         <h2 style={{
           textAlign: "center",
-          fontSize: "5rem",
-          fontWeight: 450,
+          fontSize: "3rem",
+          fontWeight: 200,
           color: "#84cc16",
           textTransform: "uppercase",
-          marginBottom: "5rem",
+          marginBottom: ".5rem",
           letterSpacing: "0.01rem",
         }}>
-          What I Do
+          Some of the things I can paint.
         </h2>
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(750px, 2fr))",
-          gap: "4.2rem",
+          gap: "3rem",
           maxWidth: "2200px",
-          margin: "3rem auto",
+          margin: "2rem auto",
         }}>
          {[
   { img: "/images/moto.jpg", title: "Motorcycles", desc: "Full custom paint jobs, flames, murals, and more" },
@@ -143,7 +143,7 @@ export default function Home() {
 ].map((service) => (
   <div key={service.title} style={{
     background: "#111",
-    border: "5px solid #96ec16",
+    border: "3px solid #96ec16",
     borderRadius: "1.5rem",
     overflow: "hidden",
     boxShadow: "0 0 45px rgb(106, 0, 228)",
