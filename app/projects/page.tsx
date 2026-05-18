@@ -6,44 +6,6 @@ import Image from "next/image";
 export default function Projects() {
   return (
     <main style={{ minHeight: "100vh", background: "#000", color: "white" }}>
-
-      {/* NAV */}
-      <nav style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "0.75rem 2rem",
-        borderBottom: "2px solid #84cc16",
-        background: "rgba(0,0,0,0.95)",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}>
-        <Link href="/">
-          <Image
-            src="/images/logo.jpg"
-            alt="JayJays"
-            width={60}
-            height={60}
-            style={{ objectFit: "contain" }}
-          />
-        </Link>
-        <div style={{ display: "flex", gap: "2rem" }}>
-          {["Projects", "Merch", "Contact"].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`} style={{
-              color: "#84cc16",
-              textDecoration: "none",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              fontSize: "1rem",
-            }}>
-              {item}
-            </Link>
-          ))}
-        </div>
-      </nav>
-
       {/* CONTENT */}
       <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "3rem 1.5rem" }}>
         <h1 style={{
