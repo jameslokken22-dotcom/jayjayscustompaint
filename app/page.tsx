@@ -4,46 +4,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-
-      {/* NAV */}
-      <nav style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "0.75rem 2rem",
-        borderBottom: "2px solid #84cc16",
-        background: "rgba(0,0,0,0.95)",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}>
-        <Image
-          src="/images/logo.PNG"
-          alt="JayJays Custom Paint"
-          width={200}
-          height={100}
-          style={{ objectFit: "contain" }}
-        />
-        <div style={{ display: "flex", gap: "2rem" }}>
-          {["Projects", "Merch", "Contact"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              style={{
-                color: "#84cc16",
-                textDecoration: "none",
-                fontWeight: "bold",
-                fontSize: "1rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-              }}
-            >
-              {item}
-            </Link>
-          ))}
-        </div>
-      </nav>
-
       {/* HERO BANNER */}
       <section style={{ position: "relative", width: "100%", aspectRatio: "1983/793" }}>
         <Image
