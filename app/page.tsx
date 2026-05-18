@@ -137,7 +137,7 @@ export default function Home() {
         }}>
          {[
   { img: "/images/moto.jpg", title: "Motorcycles", desc: "Full custom paint jobs, flames, murals, and more" },
-  { img: "/images/car.jpg", title: "Cars & Trim", desc: "Car trim, accents, and working toward full resprays" },
+  { img: "/images/car.JPG", title: "Cars & Trim", desc: "Car trim, accents, and working toward full resprays" },
   { img: "/images/wood.jpg", title: "Wood & Furniture", desc: "Dressers, signs, and anything wood you can think of" },
   { img: "/images/custom.jpg", title: "Anything Custom", desc: "If you can dream it, JayJay can paint it" },
 ].map((service) => (
